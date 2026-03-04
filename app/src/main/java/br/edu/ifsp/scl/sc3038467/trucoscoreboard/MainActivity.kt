@@ -57,6 +57,22 @@ class MainActivity : AppCompatActivity() {
             checkMaoDe11()
         }
     }
+
+    private fun checkMaoDe11() {
+        if (scoreA == 11 && scoreB == 11 && (!alertMao11ShownA || !alertMao11ShownB)) {
+            alertMao11ShownA = true
+            alertMao11ShownB = true
+            showAlertDialog("Atenção: Mão de 11!", "Ambas as equipes estão com 11 pontos. Jogo no escuro!")
+        }
+        else if (scoreA == 11 && !alertMao11ShownA) {
+            alertMao11ShownA = true
+            showAlertDialog("Atenção: Mão de 11!", "A Equipe A está na mão de 11!")
+        }
+        else if (scoreB == 11 && !alertMao11ShownB) {
+            alertMao11ShownB = true
+            showAlertDialog("Atenção: Mão de 11!", "A Equipe B está na mão de 11!")
+        }
+    }
     private fun showAlertDialog(title: String, message: String) {
         AlertDialog.Builder(this)
             .setTitle(title)
