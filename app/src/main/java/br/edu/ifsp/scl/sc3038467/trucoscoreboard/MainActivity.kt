@@ -80,6 +80,14 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("OK", null)
             .show()
     }
+    private fun showWinner(winningTeam: String) {
+        AlertDialog.Builder(this)
+            .setTitle("Fim de Jogo")
+            .setMessage("A $winningTeam venceu a partida!")
+            .setPositiveButton("Nova Partida") { _, _ -> resetGame() }
+            .setCancelable(false)
+            .show()
+    }
 
 
 
