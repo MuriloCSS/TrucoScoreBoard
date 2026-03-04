@@ -2,6 +2,7 @@ package br.edu.ifsp.scl.sc3038467.trucoscoreboard
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -56,6 +57,15 @@ class MainActivity : AppCompatActivity() {
             checkMaoDe11()
         }
     }
+    private fun showAlertDialog(title: String, message: String) {
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("OK", null)
+            .show()
+    }
+
+
 
 
 }
