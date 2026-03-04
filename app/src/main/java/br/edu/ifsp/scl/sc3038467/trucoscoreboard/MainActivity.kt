@@ -88,6 +88,16 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(false)
             .show()
     }
+    private fun resetGame() {
+        scoreA = 0
+        scoreB = 0
+        alertMao11ShownA = false
+        alertMao11ShownB = false
+        binding.btnPlus3A.isEnabled = true
+        binding.btnPlus3B.isEnabled = true
+        binding.tvScoreA.text = scoreA.toString()
+        binding.tvScoreB.text = scoreB.toString()
+    }
 
 
 
