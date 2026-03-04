@@ -38,6 +38,23 @@ class MainActivity : AppCompatActivity() {
         } else {
             scoreB += points
         }
+        updateUIAndCheckGameState()
+    }
+
+    private fun updateUIAndCheckGameState() {
+        binding.tvScoreA.text = scoreA.toString()
+        binding.tvScoreB.text = scoreB.toString()
+
+        binding.btnPlus3A.isEnabled = scoreA < 11
+        binding.btnPlus3B.isEnabled = scoreB < 11
+
+        if (scoreA >= 12) {
+            showWinner("Equipe A")
+        } else if (scoreB >= 12) {
+            showWinner("Equipe B")
+        } else {
+            checkMaoDe11()
+        }
     }
 
 
