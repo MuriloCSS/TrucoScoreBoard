@@ -15,6 +15,21 @@ class MainActivity : AppCompatActivity() {
     private var alertaMao11A = false
     private var alertaMao11B = false
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btn1A.setOnClickListener { addPoints("A", 1) }
+        binding.btn3A.setOnClickListener { addPoints("A", 3) }
+
+        binding.btn1B.setOnClickListener { addPoints("B", 1) }
+        binding.btn3B.setOnClickListener { addPoints("B", 3) }
+
+        binding.btnReset.setOnClickListener { }
+    }
+
     private fun addPoints(team: String, points: Int) {
         if (team == "A") {
             pontosA += points
