@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             pontosB += points
         }
+        atualizaUICheckJogoState()
     }
 
 
@@ -73,6 +74,22 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Nova Partida") { _, _ -> resetGame() }
             .setCancelable(false)
             .show()
+    }
+
+    private fun atualizaUICheckJogoState() {
+        binding.tvPontosA.text = pontosA.toString()
+        binding.tvPontosB.text = pontosB.toString()
+
+        binding.btn3A.isEnabled = pontosA < 11
+        binding.btn3B.isEnabled = pontosB < 11
+
+        if (pontosA >= 12) {
+            showWinner("Equipe A")
+        } else if (pontosB >= 12) {
+            showWinner("Equipe B")
+        } else {
+            checkMaoDe11()
+        }
     }
 
     private fun resetGame() {
