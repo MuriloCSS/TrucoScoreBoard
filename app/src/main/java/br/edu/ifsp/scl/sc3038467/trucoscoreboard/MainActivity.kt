@@ -14,4 +14,12 @@ class MainActivity : AppCompatActivity() {
 
     private var alertaMao11A = false
     private var alertaMao11B = false
+
+    private fun addPoints(team: String, points: Int) {
+        if (team == "A") {
+            pontosA += points
+        } else {
+            pontosB += points
+        }
+    }
 }
