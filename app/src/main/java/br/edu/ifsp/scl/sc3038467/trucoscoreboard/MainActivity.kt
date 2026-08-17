@@ -66,6 +66,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showWinner(winningTeam: String) {
+        AlertDialog.Builder(this)
+            .setTitle("Fim de Jogo")
+            .setMessage("$winningTeam ganhou a partida!")
+            .setPositiveButton("Nova Partida") { _, _ -> resetGame() }
+            .setCancelable(false)
+            .show()
+    }
+
     private fun resetGame() {
         pontosA = 0
         pontosB = 0
