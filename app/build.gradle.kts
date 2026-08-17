@@ -5,7 +5,7 @@ plugins {
 android {
     namespace = "br.edu.ifsp.scl.sc3038467.trucoscoreboard"
     compileSdk {
-        version = release(36) {
+        version = release(37) {
             minorApiLevel = 1
         }
     }
