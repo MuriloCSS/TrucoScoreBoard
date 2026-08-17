@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.btn1B.setOnClickListener { addPoints("B", 1) }
         binding.btn3B.setOnClickListener { addPoints("B", 3) }
 
-        binding.btnReset.setOnClickListener { }
+        binding.btnReset.setOnClickListener { resetGame() }
     }
 
     private fun addPoints(team: String, points: Int) {
@@ -37,4 +37,17 @@ class MainActivity : AppCompatActivity() {
             pontosB += points
         }
     }
+
+    private fun resetGame() {
+        pontosA = 0
+        pontosB = 0
+        alertaMao11A = false
+        alertaMao11B = false
+        binding.btn3A.isEnabled = true
+        binding.btn3B.isEnabled = true
+        binding.tvPontosA.text = pontosA.toString()
+        binding.tvPontosB.text = pontosB.toString()
+    }
+
+
 }
