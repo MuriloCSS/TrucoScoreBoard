@@ -96,4 +96,13 @@
                 android:layout_margin="8dp"/>
         </LinearLayout>
     </LinearLayout>
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reiniciar Partida"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:backgroundTint="#7A1C1C"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>
