@@ -48,6 +48,24 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
+
+
+    private fun checkMaoDe11() {
+        if (pontosA == 11 && pontosB == 11 && (!alertaMao11A || !alertaMao11B)) {
+            alertaMao11A = true
+            alertaMao11B = true
+            showAlertDialog("Atenção: Mão de 11!", "Ambas as equipes estão com 11 pontos. Jogo no escuro!")
+        }
+        else if (pontosA == 11 && !alertaMao11A) {
+            alertaMao11A = true
+            showAlertDialog("Atenção: Mão de 11!", "A Equipe A está na mão de 11!")
+        }
+        else if (pontosB == 11 && !alertaMao11B) {
+            alertaMao11B = true
+            showAlertDialog("Atenção: Mão de 11!", "A Equipe B está na mão de 11!")
+        }
+    }
+
     private fun resetGame() {
         pontosA = 0
         pontosB = 0
